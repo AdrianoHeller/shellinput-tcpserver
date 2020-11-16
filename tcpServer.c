@@ -12,7 +12,8 @@ int main(int argc, char* argv[]){
     // Checking Shell inputs
     if(argc > 1) {
         char** arg = &argv[1];
-//        *arg = strcmp(*arg,"127.0.0.1") == 0 ? "IPv4 Loopback" : strcmp(*arg,"::1") == 0 ? "IPv6 Loopback" : *arg;
+        // Parsing the IPv4 and IPv6 Loopback input addresses. Can be commented with no issues on compiling
+        *arg = strcmp(*arg,"127.0.0.1") == 0 ? "IPv4 Loopback" : strcmp(*arg,"::1") == 0 ? "IPv6 Loopback" : *arg;
         printf("Remote Server Address: %s\n", *arg);
         arg++;
         printf("Port or Protocol: %s\n", *arg);
